@@ -269,10 +269,16 @@ DASH_ENTERPRISE_URLS = {
                     'content': chapters.dash_enterprise.index.layout
                 },
                 {
+                    'url': '/dash-enterprise/migration-guide',
+                    'content': chapters.dash_enterprise.dash_enterprise_chapters.MigrationGuide,
+                    'name': 'Quickstart Migration Guide',
+                    'description': 'Migrate your Dash Apps to Dash Enterprise Server'
+                },
+                {
                     'url': '/dash-enterprise/initialize',
                     'content': chapters.dash_enterprise.dash_enterprise_chapters.Initialize,
                     'name': 'Part 1. Initialize Dash Apps on Dash Enterprise',
-                    'description': 'Initialize Dash Apps on Plotly Enterprise'
+                    'description': 'Initialize Dash Apps on Dash Enterprise'
                 },
                 {
                     'url': '/dash-enterprise/deployment',
