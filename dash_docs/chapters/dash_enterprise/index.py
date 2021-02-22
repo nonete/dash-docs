@@ -93,6 +93,9 @@ rc.Section("User Interface", [
         rc.Chapter('Dash Enterprise Continuous Integration',
                 '/dash-enterprise/continuous-integration',
                 'Learn how to setup CI pipelines for Dash Enterprise'),
+        rc.Chapter('Dash Enterprise Review Apps',
+                '/dash-enterprise/review-apps',
+                'Enable Review Apps'),
     ]),
 
     rc.Section("Troubleshooting", [
