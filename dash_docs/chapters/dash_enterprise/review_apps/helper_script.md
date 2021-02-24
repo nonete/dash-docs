@@ -609,7 +609,9 @@ else:
 #### delete.py
 
 This script purges Review Apps and their associated services once 
-they have been merged into production.
+they have been merged into production. 
+
+
 
 ```python
 # Run this script with a scheduler
