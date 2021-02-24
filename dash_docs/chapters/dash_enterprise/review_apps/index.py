@@ -11,14 +11,17 @@ check_url = tools.is_in_dash_enterprise()
 PAGE_CONTENT = [rc.Markdown('''
     {review_apps}
     {setup}
-    {helper_script}
+    {helper_script_settings}
+    {helper_script_initialize}
+    {helper_script_deploy}
+    {helper_script_delete}
     {dash_enterprise_accounts}
+    {ci_platform}
     {circle_ci}
     {github}
 
-''')]
+'''.format(**{k.replace('.md', ''): v for (k, v) in content.items()}))]
 
 layout = html.Div([
     PAGE_CONTENT,
 ])
- 

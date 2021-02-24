@@ -1,13 +1,19 @@
-### settings.py
+# Dash Review Apps 
+Enable Dash Review Apps with **Helper Script** and exiting CI/CD pipeline.
+
+## Helper Script
+
+The helper script is comprised of four modules that leverage the Dash Enterprise
+Server API to automatically initialize and deploy Dash Review Apps. 
+
+Theses helper scripts are templates that can be modified to meet your needs.
+
+### Settings.py
 
 The `settings.py` file is responsible for storing all of the environment 
 variables needed for Review App automation.
 
 #### User Configurable Variables
-
-This section covers all of the user configurable variables available in the 
-`settings.py` file and used by other modules.
-
 
 
 |                         | settings.py | initialize.py | deploy.py | delete.py |
@@ -192,3 +198,9 @@ environment variables.
 ```python
 SERVICE_PRIVATE_SSH_KEY = os.getenv("ADMIN_PRIVATE_SSH_KEY")
 ```
+
+### Initialize.py
+
+### Deploy.py
+
+### Delete.py

@@ -11,5 +11,5 @@ In this chapter will cover:
 
 * Requirements
 * Platform and service configuration
-* Helper script
+* Helper scripts
 * CircleCI use case

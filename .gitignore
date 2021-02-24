@@ -26,3 +26,11 @@ ignore/indicators.csv
 .Rproj.user
 dash-docs.Rproj
 .vscode
+
+dash_docs/chapters/dash_enterprise/review_apps/_helper_script_delete copy.md
+dash_docs/chapters/dash_enterprise/review_apps/_helper_script_deploy copy.md
+dash_docs/chapters/dash_enterprise/review_apps/_helper_script_initialize _code.md
+dash_docs/chapters/dash_enterprise/review_apps/helper_script.md
+dash_docs/chapters/dash_enterprise/review_apps/_helper_script.md
+dash_docs/chapters/dash_enterprise/review_apps/helper_script.md
+dash_docs/chapters/dash_enterprise/review_apps/helper_script.md
