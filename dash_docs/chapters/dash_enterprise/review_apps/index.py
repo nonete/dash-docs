@@ -20,7 +20,7 @@ PAGE_CONTENT = [rc.Markdown('''
     {circle_ci}
     {github}
 
-'''.format(**{k.replace('.md', ''): v for (k, v) in content.items()}))]
+'''.format(**{k.replace('.md', ''): v for (k, v) in content.items()})]
 
 layout = html.Div([
     PAGE_CONTENT,
