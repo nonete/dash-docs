@@ -1,9 +1,10 @@
-### settings.py
+
+## settings.py
 
 The `settings.py` file is responsible for storing all of the environment 
 variables needed for Review App automation.
 
-#### User Configurable Variables
+### User Configurable Variables
 
 This section covers all of the user configurable variables available in the 
 `settings.py` file and used by other modules.
@@ -31,6 +32,7 @@ This section covers all of the user configurable variables available in the
 | DEBUG                   |             | X             |           | X         |
 
 
+-----
 
 #### PREFIX
 
@@ -40,6 +42,8 @@ starting with this prefix will be deleted.
 ```python
 PREFIX = "review-app-"
 ```
+
+-----
 
 #### LAST_UPDATE
 
@@ -53,6 +57,8 @@ LAST_UPDATE = {"days": 5}
 # Accepted value: int
 ```
 
+-----
+
 #### TRUNK_NAME
 
 The primary branch of the Review App repository is called `TRUNK_NAME`. In the 
@@ -62,6 +68,8 @@ merged to this branch.
 ```python
 TRUNK_BRANCHNAME = "main" 
 ```
+
+-----
 
 #### BRANCHNAME
 
@@ -73,6 +81,9 @@ will complain.
 ```python
 BRANCHNAME = os.getenv("CIRCLE_BRANCH")
 ```
+
+-----
+
 #### REPONAME
 
 `REPONAME` is the name of the repository that will hold the Review App 
@@ -81,6 +92,9 @@ branches.
 ```python
 REPONAME = os.getenv("CIRCLE_PROJECT_REPONAME")
 ```
+
+-----
+
 #### TARGET_APPNAME
 
 `TARGET_APPNAME` is the name the Dash App that will serve as a Review App
@@ -91,6 +105,9 @@ it, or Review App initialization will fail.
 ```python
 TARGET_APPNAME = "chris-app"
 ```
+
+-----
+
 #### APPNAME
 
 `APPNAME` determines which naming pattern your Review Apps will follow. 
@@ -99,6 +116,9 @@ TARGET_APPNAME = "chris-app"
 ```python
 APPNAME = f"{TARGET_APPNAME}-rev-{BRANCHNAME}"[0:30]
 ```
+
+-----
+
 #### DASH_ENTERPRISE_HOST
 
 `DASH_ENTERPRISE_HOST` is your Dash Enterprise Server's host address.
@@ -106,6 +126,9 @@ APPNAME = f"{TARGET_APPNAME}-rev-{BRANCHNAME}"[0:30]
 ```python
 DASH_ENTERPRISE_HOST = "qa-de-410.plotly.host" 
 ```
+
+-----
+
 #### SERVICE_API_KEY
 
 `SERVICE_API_KEY` is the "Machine User's" API key used to access your Dash
@@ -114,6 +137,9 @@ Enterprise Host.
 ```python
 SERVICE_API_KEY = os.getenv("ADMIN_API_KEY")
 ```
+
+-----
+
 #### SERVICE_USERNAME
 
 `SERVICE_USERNAME` is a "Machine User"  (with admin privileges) that handles 
@@ -123,6 +149,9 @@ to use Review Apps
 ```python
 SERVICE_USERNAME = "admin"
 ```
+
+-----
+
 #### USERNAME_API_KEY
 
 The `USERNAME_API_KEY` allows the helper script to initialize a Review App on 
@@ -139,6 +168,9 @@ USERNAME_API_KEY = (
     )
 )
 ```
+
+-----
+
 #### USERNAME
 
 In this case,  `USERNAME` is equivalent to the GitHub username of the Developer 
@@ -151,6 +183,9 @@ Apps, it is an effective way to keep your apps away from unauthorized users.
 ```python
 USERNAME = os.getenv("CIRCLE_USERNAME")
 ```
+
+-----
+
 #### DE_USER_TO_CI_USER
 
 `DE_USER_TO_CI_USER` maps your developer
@@ -163,6 +198,9 @@ DASH_ENTERPRISE_USERNAME_TO_CIRCLECI_USERNAME = {
     "tobinngo": "tobinngo",
 }
 ```
+
+-----
+
 #### DE_USER_TO_CI_API
 
 `DE_USER_TO_CI_API` maps developer usernames to the corresponding API keys 
@@ -174,6 +212,9 @@ DASH_ENTERPRISE_USERNAME_TO_CIRCLE_CI_API_KEY = {
     "tobinngo": "TOBINNGO_API_KEY",
 }
 ```
+
+-----
+
 #### SSH_CONFIG
 
 `SSH_CONFIG` contains your SSH settings for Dash app deployment. The crucial 
@@ -182,6 +223,9 @@ fields are, `DASH_ENTERPRISE_HOST`, `SERVICE_USERNAME`, and port number.
 ```python
 SSH_CONFIG = f"Host {DASH_ENTERPRISE_HOST},    HostName {DASH_ENTERPRISE_HOST}, User {SERVICE_USERNAME},    Port 3022,    IdentityFile ~/.ssh/id_rsa,    StrictHostKeyChecking no,    UserKnownHostsFile /dev/null"
 ```
+
+-----
+
 #### SERVICE_PRIVATE_SSH_KEY
 
 `SERVICE_PRIVATE_SSH_KEY` belongs to a Dash Enterprise user with admin 
@@ -192,3 +236,5 @@ environment variables.
 ```python
 SERVICE_PRIVATE_SSH_KEY = os.getenv("ADMIN_PRIVATE_SSH_KEY")
 ```
+
+-----

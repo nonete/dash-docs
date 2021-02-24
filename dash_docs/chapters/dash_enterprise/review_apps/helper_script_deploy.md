@@ -1,4 +1,5 @@
-#### deploy.py
+
+## deploy.py
 
 A Review App relies on a few bash commands for deployment. 
 
@@ -20,3 +21,5 @@ After deploying the Review App, permission levels are updated to match those
 belonging to its production counterpart.
 The production app creator is added as a collaborator for the review app
 if they do not already have admin access.
+
+-----

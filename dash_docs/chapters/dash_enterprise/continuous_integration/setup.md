@@ -42,7 +42,8 @@ This set of instructions demonstrates how to write a script that deploys your co
     Host *,    Port 3022,    StrictHostKeyChecking no,     UserKnownHostsFile=/dev/null
     ```
 
-    3. Provide the following script to the CI tool. If the CI tool accepts YAML files that 
+
+    1. Provide the following script to the CI tool. If the CI tool accepts YAML files that 
     run steps one at a time, then you can provide each of these commands on their own line.
 
     ```
@@ -77,4 +78,29 @@ This set of instructions demonstrates how to write a script that deploys your co
     - Replace `<your-dash-app-name>` with the name of your Dash app as initialized on Dash Enterprise
     - The path of `~/.ssh` may be different on your CI system. Consult your CI system's docs on SSH.
 
+3.1. Here is another way:
+   1.    
+    You can add SSH config or SSH key as an environment variable, is to 
+    encode the strings with base64.
+
+    ``` sh
+    cat SERVICE_PRIVATE_SSH_KEY | base64 -w 0
+    ```
+
+    ```python
+    subprocess.run(
+        f"""
+        echo "SERVICE_PRIVATE_SSH_KEY" | base64 --decode -i > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_rsa
+        echo SSH_CONFIG | tr ',' '\n' > ~/.ssh/config
+        git config remote.plotly.url >&- || (git remote add plotly 
+        dokku@DASH_ENTERPRISE_HOST:deploy_appname)
+        git push --force plotly HEAD:master
+        """, shell=True
+    )
+    ```
+
 4. Trigger this CI script when code is merged into `master`.
+

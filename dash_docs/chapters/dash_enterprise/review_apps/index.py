@@ -8,7 +8,8 @@ import os
 content = tools.load_markdown_files(__file__)
 check_url = tools.is_in_dash_enterprise()
 
-PAGE_CONTENT = [rc.Markdown('''
+PAGE_CONTENT = rc.Markdown('''
+
     {review_apps}
     {setup}
     {helper_script_settings}
@@ -20,7 +21,7 @@ PAGE_CONTENT = [rc.Markdown('''
     {circle_ci}
     {github}
 
-'''.format(**{k.replace('.md', ''): v for (k, v) in content.items()})]
+'''.format(**{k.replace('.md', ''): v for (k, v) in content.items()}))
 
 layout = html.Div([
     PAGE_CONTENT,

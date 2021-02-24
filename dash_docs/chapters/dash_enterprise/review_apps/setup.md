@@ -1,6 +1,7 @@
+
 ## Setup
 
-In this sections we will discuss setting up Review Apps on CI platforms with helper scripts.
+Setting up Review Apps on CI platforms with helper scripts.
 
 ### Prerequisites
 
@@ -15,3 +16,5 @@ In this sections we will discuss setting up Review Apps on CI platforms with hel
 * Create a Dash Enterprise Service Account
 * Add environment variables to CI platform
 * Update `settings.py` helper script
+
+-----

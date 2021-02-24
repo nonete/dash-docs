@@ -1,4 +1,5 @@
-### initialize.py
+
+## initialize.py
 
 This script queries your Dash Enterprise host for your target apps' settings 
 using your Service Account credentials. Your Developer Account will then 
@@ -33,3 +34,5 @@ service type.
 We filter out base environment variables from our initial query results since 
 they are already added to all dash apps deployed on the server.
 The remaining environment variables are added to the review app.
+
+-----
